@@ -43,7 +43,8 @@
         "serveTargetName": "serve",
         "previewTargetName": "preview"
       }
-    }
+    },
+    "nx/plugins/package-json"
   ],
   "generators": {
     "@nx/react": {
