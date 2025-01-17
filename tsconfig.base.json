@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@albsbz/zod-fastify": ["libs/shared/zod-fastify/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

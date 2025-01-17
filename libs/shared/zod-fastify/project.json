@@ -1,0 +1,20 @@
+{
+  "name": "zod-fastify",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/zod-fastify/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/zod-fastify",
+        "tsConfig": "libs/shared/zod-fastify/tsconfig.lib.json",
+        "packageJson": "libs/shared/zod-fastify/package.json",
+        "main": "libs/shared/zod-fastify/src/index.ts",
+        "assets": ["libs/shared/zod-fastify/*.md"]
+      }
+    }
+  }
+}
