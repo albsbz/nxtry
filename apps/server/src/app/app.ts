@@ -28,8 +28,10 @@ export async function app(fastify: FastifyInstance, opts: AppOptions) {
     dir: path.join(__dirname, 'features'),
     options: { ...opts },
     matchFilter: (path) => {
-      console.log('path', path);
-      return /\/routes\/index.js$/.test(path);
+      return /[a-z]+\.routes\.js$/.test(path);
+    },
+    dirNameRoutePrefix: function rewrite(_, folderName) {
+      return 'api/' + folderName;
     },
   });
   fastify.ready(() => {
