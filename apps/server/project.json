@@ -53,7 +53,7 @@
         },
         "production": {
           "buildTarget": "server:build:production"
-        }
+        },
       }
     },
     "test": {
@@ -64,6 +64,31 @@
     "docker-build": {
       "dependsOn": ["build"],
       "command": "docker build -f apps/server/Dockerfile . -t server"
+    },
+
+    "prisma": {
+      "command": "prisma",
+      "options": {
+        "cwd": "libs/service/database"
+      }
+    },
+    "studio": {
+      "command": "prisma studio",
+      "options": {
+        "cwd": "libs/service/database"
+      }
+    },
+    "migrate": {
+      "command": "prisma migrate dev",
+      "options": {
+        "cwd": "libs/service/database"
+      }
+    },
+    "generate-types": {
+      "command": "prisma generate",
+      "options": {
+        "cwd": "libs/service/database"
+      }
     }
   }
 }

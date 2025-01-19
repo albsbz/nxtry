@@ -1,9 +1,11 @@
 import { FastifyRequest } from 'fastify';
-import { ZodFastifyInstance } from  '@albsbz/zod-fastify';
+import { ZodFastifyInstance } from '@albsbz/zod-fastify';
 import { z } from 'zod';
+import { PrismaClient, Prisma } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 export default async function (fastify: ZodFastifyInstance) {
-  const collection = fastify.mongo.db.collection('test_collection')
   fastify.get(
     '/',
     {
@@ -19,9 +21,15 @@ export default async function (fastify: ZodFastifyInstance) {
       return { message: 'Hello API' };
     }
   );
-  fastify.post('/', async function (request:FastifyRequest<{ Body: {post: string} }> ) {
-    console.log(request.body)
-    const result = await collection.insertOne({ content: request.body.post })
-    return result
-  });
+  fastify.post(
+    '/',
+    async function (request: FastifyRequest<{ Body: { content: string } }>) {
+      const article = await prisma.article.create({
+        data: {
+          content: request.body.content,
+        },
+      });
+      return article;
+    }
+  );
 }

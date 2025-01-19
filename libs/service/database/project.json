@@ -1,0 +1,20 @@
+{
+  "name": "service-database",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/service/database/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/service/database",
+        "tsConfig": "libs/service/database/tsconfig.lib.json",
+        "packageJson": "libs/service/database/package.json",
+        "main": "libs/service/database/src/index.ts",
+        "assets": ["libs/service/database/*.md"]
+      }
+    }
+  }
+}

@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@albsbz/service-database": ["libs/service/database/src/index.ts"],
       "@albsbz/zod-fastify": ["libs/shared/zod-fastify/src/index.ts"]
     }
   },
