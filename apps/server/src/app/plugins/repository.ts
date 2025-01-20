@@ -1,7 +1,5 @@
 import fp from 'fastify-plugin';
 import { FastifyPluginAsync } from 'fastify';
-
-import { ZodFastifyInstance } from '@albsbz/zod-fastify';
 import { PrismaClient } from '@prisma/client';
 
 declare module 'fastify' {
@@ -11,7 +9,7 @@ declare module 'fastify' {
 }
 
 
-const repositoryPlugin: FastifyPluginAsync = fp(async (server, options) => {
+const repositoryPlugin: FastifyPluginAsync = fp(async (server) => {
     const prisma = new PrismaClient()
   
     await prisma.$connect()

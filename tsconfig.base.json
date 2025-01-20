@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@albsbz/service-database": ["libs/service/database/src/index.ts"],
-      "@albsbz/zod-fastify": ["libs/shared/zod-fastify/src/index.ts"]
+      "@albsbz/zod-fastify": ["libs/shared/zod-fastify/src/index.ts"],
+      "@albsnz/dto": ["libs/shared/dto/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
